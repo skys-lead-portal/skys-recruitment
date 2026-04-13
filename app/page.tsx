@@ -149,8 +149,10 @@ export default function Home() {
           {/* Divider */}
           <div style={{ width: 1, height: 32, background: 'rgba(255,255,255,0.12)' }} />
           {/* Manulife Logo */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/manulife-logo.svg" alt="Manulife" style={{ height: 28, width: 'auto', opacity: 0.9 }} />
+          <div style={{ background: '#fff', borderRadius: 6, padding: '4px 10px', display: 'flex', alignItems: 'center' }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/manulife-logo.jpg" alt="Manulife" style={{ height: 22, width: 'auto', objectFit: 'contain' }} />
+          </div>
         </div>
         <button onClick={scrollToForm} style={{ background: GOLD, color: DARK, border: 'none', borderRadius: 7, padding: '10px 24px', fontSize: 13, fontWeight: 800, cursor: 'pointer', letterSpacing: '0.03em' }}>
           Apply Now
