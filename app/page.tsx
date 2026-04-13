@@ -135,14 +135,22 @@ export default function Home() {
 
       {/* NAV */}
       <nav className="nav-pad" style={{ background: DARK, padding: '0 56px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '68px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-          <div style={{ width: 38, height: 38, background: RED, borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <span style={{ fontSize: 18, fontWeight: 900, color: '#fff', fontFamily: 'Georgia, serif' }}>S</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+          {/* SKYS Brand */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+            <div style={{ width: 36, height: 36, background: RED, borderRadius: 7, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <span style={{ fontSize: 17, fontWeight: 900, color: '#fff', fontFamily: 'Georgia, serif' }}>S</span>
+            </div>
+            <div>
+              <div style={{ fontSize: 14, fontWeight: 800, color: '#fff', letterSpacing: '0.01em' }}>SKYS Branch</div>
+              <div style={{ fontSize: 9, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.06em', textTransform: 'uppercase' }}>Representing Manulife FA Pte Ltd</div>
+            </div>
           </div>
-          <div>
-            <div style={{ fontSize: 15, fontWeight: 800, color: '#fff', letterSpacing: '0.01em' }}>SKYS Branch</div>
-            <div style={{ fontSize: 10, color: 'rgba(255,255,255,0.45)', letterSpacing: '0.07em', textTransform: 'uppercase' }}>Representing Manulife Financial Advisers Pte Ltd</div>
-          </div>
+          {/* Divider */}
+          <div style={{ width: 1, height: 32, background: 'rgba(255,255,255,0.12)' }} />
+          {/* Manulife Logo */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/manulife-logo.svg" alt="Manulife" style={{ height: 28, width: 'auto', opacity: 0.9 }} />
         </div>
         <button onClick={scrollToForm} style={{ background: GOLD, color: DARK, border: 'none', borderRadius: 7, padding: '10px 24px', fontSize: 13, fontWeight: 800, cursor: 'pointer', letterSpacing: '0.03em' }}>
           Apply Now
