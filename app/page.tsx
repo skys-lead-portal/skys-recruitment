@@ -167,45 +167,44 @@ export default function Home() {
             <div>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(201,168,76,0.12)', border: '1px solid rgba(201,168,76,0.3)', borderRadius: 50, padding: '6px 16px', marginBottom: 28 }}>
                 <span style={{ width: 6, height: 6, borderRadius: '50%', background: GOLD, display: 'inline-block', flexShrink: 0 }} />
-                <span style={{ fontSize: 11, fontWeight: 700, color: GOLD, letterSpacing: '0.1em', textTransform: 'uppercase' }}>MAP 8 — Now Open for Applications</span>
+                <span style={{ fontSize: 11, fontWeight: 700, color: GOLD, letterSpacing: '0.1em', textTransform: 'uppercase' }}>Now Recruiting — SKYS Branch × Manulife</span>
               </div>
               <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 800, color: '#fff', lineHeight: 1.15, marginBottom: 24, letterSpacing: '-0.5px' }}>
-                Earn Up To <span style={{ color: GOLD }}>400%</span> Of Your<br />Past Income.
+                Build Your Practice With<br />Singapore&apos;s <span style={{ color: GOLD }}>Leading</span> Financial<br />Advisory Team.
               </h1>
               <p style={{ fontSize: 17, color: 'rgba(255,255,255,0.8)', lineHeight: 1.8, marginBottom: 16, maxWidth: 520 }}>
-                SKYS Branch is recruiting experienced financial planners under Manulife&apos;s most competitive package yet — MAP 8. Lower targets, greater rewards, and a 6-year runway to build your practice.
+                SKYS Branch, representing Manulife Financial Advisers, is growing. We are looking for driven financial planners who want a structured path, strong team support, and a compensation framework that rewards performance.
               </p>
               <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.8, marginBottom: 40, maxWidth: 480 }}>
-                Whether you are an existing financial adviser looking to migrate or a high-income professional exploring a career in financial planning — this package is designed for you.
+                Submit your details confidentially. Our director will personally prepare a proposal tailored to your background and experience.
               </p>
               <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', alignItems: 'center' }}>
                 <button onClick={scrollToForm} style={{ background: RED, color: '#fff', border: 'none', borderRadius: 8, padding: '16px 40px', fontSize: 16, fontWeight: 800, cursor: 'pointer', boxShadow: '0 4px 20px rgba(192,57,43,0.35)', letterSpacing: '0.2px' }}>
-                  Find Out My Package
+                  Request a Private Consultation
                 </button>
                 <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.35)' }}>Confidential · No obligation</span>
               </div>
             </div>
 
-            {/* Package Preview */}
+            {/* Why SKYS card */}
             <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.09)', borderRadius: 16, padding: '28px 24px', backdropFilter: 'blur(10px)' }}>
-              <div style={{ fontSize: 10, fontWeight: 700, color: GOLD, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 18 }}>Your Package Potential</div>
+              <div style={{ fontSize: 10, fontWeight: 700, color: GOLD, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 20 }}>Why SKYS Branch</div>
               {[
-                { label: 'Below S$60,000', pkg: '100%', color: '#94A3B8' },
-                { label: 'S$60,000 – S$79,999', pkg: '120%', color: '#7CB9E8' },
-                { label: 'S$80,000 – S$119,999', pkg: '150%', color: '#60A5FA' },
-                { label: 'S$120,000 – S$199,999', pkg: '200%', color: '#34D399' },
-                { label: 'S$200,000 – S$299,999', pkg: '250%', color: '#F59E0B' },
-                { label: 'S$300,000 – S$399,999', pkg: '300%', color: '#FB923C' },
-                { label: 'Above S$400,000', pkg: '400%', color: GOLD },
-              ].map(({ label, pkg, color }) => (
-                <div key={label} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                  <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.65)' }}>{label}</span>
-                  <span style={{ fontSize: 16, fontWeight: 800, color }}>{pkg}</span>
+                { icon: '🏢', title: 'Backed by Manulife', desc: 'One of Asia\'s most trusted financial services groups' },
+                { icon: '📈', title: 'Performance-Based Compensation', desc: 'A transparent framework that rewards your results' },
+                { icon: '🤝', title: 'Mentorship & Joint Fieldwork', desc: 'Real support — not just onboarding and goodbye' },
+                { icon: '⚖️', title: 'MAS Licensed & Fully Compliant', desc: 'Infrastructure and compliance handled for you' },
+                { icon: '🎯', title: 'Structured 6-Year Growth Path', desc: 'Clear milestones from consultant to leadership' },
+                { icon: '🔄', title: 'Automatic Catch-Up Mechanism', desc: 'Your best years carry forward — no lost production' },
+              ].map(({ icon, title, desc }) => (
+                <div key={title} style={{ display: 'flex', gap: 12, padding: '10px 0', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                  <span style={{ fontSize: 18, flexShrink: 0 }}>{icon}</span>
+                  <div>
+                    <div style={{ fontSize: 13, fontWeight: 700, color: '#fff', marginBottom: 2 }}>{title}</div>
+                    <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.45)', lineHeight: 1.5 }}>{desc}</div>
+                  </div>
                 </div>
               ))}
-              <p style={{ fontSize: 11, color: 'rgba(255,255,255,0.25)', marginTop: 14, lineHeight: 1.6 }}>
-                Based on Past Annual Income (PAI). Subject to eligibility and Manulife guidelines.
-              </p>
             </div>
           </div>
         </div>
@@ -215,10 +214,10 @@ export default function Home() {
       <section style={{ background: DARK, borderTop: '1px solid rgba(255,255,255,0.05)', padding: '36px 56px' }}>
         <div className="stats-grid" style={{ maxWidth: 1140, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
           {[
-            { num: '400%', label: 'Maximum Package', sub: 'For TOT-level performers' },
+            { num: '47', label: 'Active Consultants', sub: 'Across SKYS Branch teams' },
             { num: '6 Years', label: 'Validation Period', sub: 'Aligned with payout period' },
-            { num: '1 – 5×', label: 'APE Target Ratio', sub: 'Reduced from 1–8× in MAP 7' },
-            { num: 'Year 7', label: 'Bonus Extension', sub: 'Auto-triggered at 100% target' },
+            { num: 'MAS', label: 'Licensed & Compliant', sub: 'Full regulatory support' },
+            { num: 'Manulife', label: 'Product Platform', sub: 'Top-tier products & support' },
           ].map(({ num, label, sub }) => (
             <div key={label} style={{ textAlign: 'center', padding: '20px 12px', borderRight: '1px solid rgba(255,255,255,0.05)' }}>
               <div style={{ fontSize: 26, fontWeight: 900, color: GOLD, fontFamily: "'Playfair Display', Georgia, serif", marginBottom: 6 }}>{num}</div>
@@ -254,48 +253,38 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PAYOUT TABLE */}
+      {/* COMPENSATION — gated, no numbers shown */}
       <section style={{ background: LIGHT_BG, padding: '80px 56px' }}>
-        <div style={{ maxWidth: 1140, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: 48 }}>
-            <p style={{ fontSize: 11, fontWeight: 700, color: RED, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 12 }}>MAP 8 Payout Structure</p>
-            <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'clamp(22px, 2.5vw, 32px)', fontWeight: 800, color: DARK, letterSpacing: '-0.3px' }}>
-              Know Exactly What You Will Earn
-            </h2>
-          </div>
-          <div style={{ overflowX: 'auto', borderRadius: 12, boxShadow: '0 4px 24px rgba(0,0,0,0.07)', border: '1px solid #E8EDF5' }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13, minWidth: 700 }}>
-              <thead>
-                <tr>
-                  <th style={{ background: DARK, color: '#fff', padding: '16px 20px', textAlign: 'left', fontWeight: 700, fontSize: 12, letterSpacing: '0.04em' }}>Past Annual Income (PAI)</th>
-                  <th style={{ background: DARK, color: 'rgba(255,255,255,0.7)', padding: '16px 20px', textAlign: 'center', fontWeight: 600, fontSize: 12 }}>Sign-On Bonus</th>
-                  <th style={{ background: DARK, color: 'rgba(255,255,255,0.7)', padding: '16px 20px', textAlign: 'center', fontWeight: 600, fontSize: 12 }}>Production Bonus</th>
-                  <th style={{ background: DARK, color: GOLD, padding: '16px 20px', textAlign: 'center', fontWeight: 800, fontSize: 13 }}>Total Package</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  { pai: 'Below S$60,000', sb: '20%', pb: '80%', total: '100%', top: false },
-                  { pai: 'S$60,000 – S$79,999', sb: '20%', pb: '100%', total: '120%', top: false },
-                  { pai: 'S$80,000 – S$119,999', sb: '50%', pb: '100%', total: '150%', top: false },
-                  { pai: 'S$120,000 – S$199,999', sb: '50%', pb: '150%', total: '200%', top: false },
-                  { pai: 'S$200,000 – S$299,999', sb: '50%', pb: '200%', total: '250%', top: false },
-                  { pai: 'S$300,000 – S$399,999', sb: '50%', pb: '250%', total: '300%', top: true },
-                  { pai: 'Above S$400,000', sb: '50%', pb: '350%', total: '400%', top: true },
-                ].map(({ pai, sb, pb, total, top }, i) => (
-                  <tr key={pai} style={{ background: top ? '#FFFBF0' : i % 2 === 0 ? '#fff' : '#F8FAFD' }}>
-                    <td style={{ padding: '14px 20px', borderBottom: '1px solid #E8EDF5', color: '#374151', fontWeight: 500 }}>{pai}</td>
-                    <td style={{ padding: '14px 20px', borderBottom: '1px solid #E8EDF5', textAlign: 'center', color: '#6B7280' }}>{sb}</td>
-                    <td style={{ padding: '14px 20px', borderBottom: '1px solid #E8EDF5', textAlign: 'center', color: '#6B7280' }}>{pb}</td>
-                    <td style={{ padding: '14px 20px', borderBottom: '1px solid #E8EDF5', textAlign: 'center', fontWeight: 900, fontSize: 15, color: top ? GOLD : DARK }}>{total}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p style={{ fontSize: 12, color: '#9CA3AF', marginTop: 16, textAlign: 'center', lineHeight: 1.7 }}>
-            COT standing required for 200%–250% packages. TOT standing required for 300%–400% packages. Subject to eligibility and Manulife Financial Advisers Pte Ltd guidelines.
+        <div style={{ maxWidth: 900, margin: '0 auto', textAlign: 'center' }}>
+          <p style={{ fontSize: 11, fontWeight: 700, color: RED, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 12 }}>Compensation Framework</p>
+          <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'clamp(22px, 2.5vw, 32px)', fontWeight: 800, color: DARK, letterSpacing: '-0.3px', marginBottom: 20 }}>
+            A Package Built Around Your Performance
+          </h2>
+          <p style={{ fontSize: 16, color: '#6B7280', lineHeight: 1.8, maxWidth: 640, margin: '0 auto 40px' }}>
+            Our compensation structure under Manulife&apos;s MAP 8 is designed to reward your track record — not just your willingness to move. Every proposal is personalised based on your background, production history, and career goals.
           </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginBottom: 40 }}>
+            {[
+              { title: 'Performance-Based', desc: 'Your compensation reflects your results — sign-on and production bonuses tied to your actual track record' },
+              { title: '6-Year Validation', desc: 'A structured multi-year framework with automatic catch-up — so no year of hard work is ever wasted' },
+              { title: 'Year 7 Upside', desc: 'Outperform your targets and unlock an additional year of production bonus — pure reward for excellence' },
+            ].map(({ title, desc }) => (
+              <div key={title} style={{ background: '#fff', border: '1px solid #E8EDF5', borderRadius: 12, padding: '24px 20px', textAlign: 'left' }}>
+                <div style={{ width: 8, height: 8, borderRadius: '50%', background: GOLD, marginBottom: 14 }} />
+                <div style={{ fontSize: 14, fontWeight: 800, color: DARK, marginBottom: 8 }}>{title}</div>
+                <div style={{ fontSize: 13, color: '#6B7280', lineHeight: 1.7 }}>{desc}</div>
+              </div>
+            ))}
+          </div>
+          <div style={{ background: DARK, borderRadius: 12, padding: '28px 32px', display: 'inline-flex', alignItems: 'center', gap: 24, flexWrap: 'wrap', justifyContent: 'center' }}>
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ fontSize: 14, fontWeight: 700, color: '#fff', marginBottom: 4 }}>Want to know your specific package?</div>
+              <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)' }}>Submit your details below. Our director will prepare a personalised proposal for you.</div>
+            </div>
+            <button onClick={scrollToForm} style={{ background: GOLD, color: DARK, border: 'none', borderRadius: 8, padding: '12px 28px', fontSize: 14, fontWeight: 800, cursor: 'pointer', whiteSpace: 'nowrap', flexShrink: 0 }}>
+              Request Private Proposal
+            </button>
+          </div>
         </div>
       </section>
 
@@ -305,16 +294,16 @@ export default function Home() {
           <div>
             <p style={{ fontSize: 11, fontWeight: 700, color: RED, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 12 }}>Who Should Apply</p>
             <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'clamp(22px, 2.5vw, 34px)', fontWeight: 800, color: DARK, letterSpacing: '-0.3px', marginBottom: 20 }}>
-              Is MAP 8<br />Right For You?
+              Is This<br />Right For You?
             </h2>
             <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.8, marginBottom: 32 }}>
-              MAP 8 is designed for ambitious financial planners who are ready to build a serious practice with the right structure, support, and compensation.
+              We are looking for individuals who are serious about building a sustainable financial advisory practice — with the right values, drive, and commitment to client outcomes.
             </p>
             {[
-              'Existing financial advisers at other firms looking to migrate with a strong package',
-              'High-income professionals — lawyers, bankers, doctors — exploring FA as a career',
-              'MDRT, COT, and TOT performers looking to maximise earnings under a structured model',
-              'Motivated individuals with strong networks and the drive to build a client base',
+              'Experienced financial advisers seeking a structured team environment and long-term growth',
+              'High-income professionals — lawyers, bankers, doctors — exploring financial advisory as a second career',
+              'MDRT, COT, and TOT performers who want mentorship, infrastructure, and a clear leadership path',
+              'Motivated individuals with strong professional networks and a passion for helping clients',
             ].map(item => (
               <div key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 12, marginBottom: 16 }}>
                 <span style={{ width: 22, height: 22, borderRadius: '50%', background: RED, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 1 }}>
@@ -343,12 +332,12 @@ export default function Home() {
       <section id="apply" style={{ background: `linear-gradient(135deg, ${DARK} 0%, #1B3A5C 100%)`, padding: '88px 56px' }}>
         <div style={{ maxWidth: 620, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 44 }}>
-            <p style={{ fontSize: 11, fontWeight: 700, color: GOLD, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 12 }}>Apply Now</p>
+            <p style={{ fontSize: 11, fontWeight: 700, color: GOLD, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 12 }}>Private Consultation</p>
             <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: 'clamp(24px, 3vw, 36px)', fontWeight: 800, color: '#fff', letterSpacing: '-0.3px', marginBottom: 14 }}>
-              Find Out Your Package
+              Let&apos;s Have a Conversation
             </h2>
             <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.55)', lineHeight: 1.8 }}>
-              Submit your details and our team will be in touch within one business day with your personalised MAP 8 package.
+              Share your background with us. Our director will personally reach out to understand your goals and explore if SKYS Branch is the right fit for your career.
             </p>
           </div>
 
@@ -399,7 +388,7 @@ export default function Home() {
                   <select value={form.pai} onChange={e => setForm(f => ({ ...f, pai: e.target.value }))} style={inputStyle} required>
                     <option value="">Select your income range</option>
                     {PAI_TIERS.map(t => (
-                      <option key={t.value} value={t.value}>{t.label} — {t.package}</option>
+                      <option key={t.value} value={t.value}>{t.label}</option>
                     ))}
                   </select>
                   <p style={{ fontSize: 11, color: '#9CA3AF', marginTop: 6, lineHeight: 1.5 }}>Used solely to determine your MAP 8 package. Kept strictly confidential.</p>
@@ -419,7 +408,7 @@ export default function Home() {
                 )}
 
                 <button type="submit" disabled={loading} style={{ width: '100%', padding: '15px', background: loading ? '#9CA3AF' : DARK, color: '#fff', border: 'none', borderRadius: 8, fontSize: 15, fontWeight: 800, cursor: loading ? 'not-allowed' : 'pointer', letterSpacing: '0.2px', boxShadow: loading ? 'none' : `0 4px 16px rgba(13,27,42,0.25)` }}>
-                  {loading ? 'Submitting...' : 'Submit Application'}
+                  {loading ? 'Submitting...' : 'Request Consultation'}
                 </button>
                 <p style={{ fontSize: 11, color: '#9CA3AF', marginTop: 10, textAlign: 'center', lineHeight: 1.5 }}>
                   All information is treated with strict confidentiality · MAS Licensed Advisory
