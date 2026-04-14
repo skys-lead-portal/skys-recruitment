@@ -1,6 +1,6 @@
 {
-  "/api/submit/route": "app/api/submit/route.js",
   "/_not-found/page": "app/_not-found/page.js",
+  "/api/submit/route": "app/api/submit/route.js",
   "/api/wa-webhook/route": "app/api/wa-webhook/route.js",
   "/page": "app/page.js"
 }

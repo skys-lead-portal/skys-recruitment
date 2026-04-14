@@ -7,19 +7,19 @@
       "static/chunks/main-app-37a083ad38b94d70.js",
       "static/chunks/app/_not-found/page-48ff26afcf0a0b6a.js"
     ],
-    "/api/submit/route": [
-      "static/chunks/webpack-078f6dfb37dff419.js",
-      "static/chunks/4bd1b696-c023c6e3521b1417.js",
-      "static/chunks/255-4f212684648fcab9.js",
-      "static/chunks/main-app-37a083ad38b94d70.js",
-      "static/chunks/app/api/submit/route-f8348f1ba51eafe0.js"
-    ],
     "/layout": [
       "static/chunks/webpack-078f6dfb37dff419.js",
       "static/chunks/4bd1b696-c023c6e3521b1417.js",
       "static/chunks/255-4f212684648fcab9.js",
       "static/chunks/main-app-37a083ad38b94d70.js",
       "static/chunks/app/layout-f8348f1ba51eafe0.js"
+    ],
+    "/api/submit/route": [
+      "static/chunks/webpack-078f6dfb37dff419.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-4f212684648fcab9.js",
+      "static/chunks/main-app-37a083ad38b94d70.js",
+      "static/chunks/app/api/submit/route-f8348f1ba51eafe0.js"
     ],
     "/api/wa-webhook/route": [
       "static/chunks/webpack-078f6dfb37dff419.js",

@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 const SKYS_SUPABASE_URL = 'https://qcboyqrumtzmqffukrhb.supabase.co'
-const RECRUITMENT_SOURCE_ID = 'rc25-map8'
-
 function normalizePhone(raw: string): string {
   const digits = raw.replace(/\D/g, '')
   if (digits.startsWith('65') && digits.length === 10) return `+${digits}`
