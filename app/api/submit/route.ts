@@ -120,7 +120,6 @@ export async function POST(req: NextRequest) {
           pai_tier: pai,
           mdrt: mdrt || 'no',
           source: 'rc25-map8',
-          source_id: RECRUITMENT_SOURCE_ID,
           status: 'new',
           campaign_id: campaignId,
         }),

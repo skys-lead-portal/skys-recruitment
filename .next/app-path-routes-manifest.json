@@ -1,6 +1,6 @@
 {
-  "/api/wa-webhook/route": "/api/wa-webhook",
   "/api/submit/route": "/api/submit",
   "/_not-found/page": "/_not-found",
+  "/api/wa-webhook/route": "/api/wa-webhook",
   "/page": "/"
 }
