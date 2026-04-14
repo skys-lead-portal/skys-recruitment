@@ -102,7 +102,7 @@ export default function Home() {
         className="hero-section"
         style={{
           minHeight: '100vh',
-          background: `linear-gradient(to bottom, rgba(10,5,0,0.45) 0%, rgba(10,5,0,0.35) 40%, rgba(15,8,0,0.6) 70%, rgba(20,8,0,0.92) 100%), url('/hero-bg.jpg') center top/cover no-repeat`,
+          background: `linear-gradient(to bottom, rgba(10,5,0,0.25) 0%, rgba(10,5,0,0.2) 30%, rgba(15,8,0,0.55) 65%, rgba(20,8,0,0.95) 100%), url('/hero-bg.jpg') center top / cover no-repeat`,
           display: 'flex', flexDirection: 'column', justifyContent: 'center',
           padding: '100px 0 60px',
           position: 'relative',
@@ -139,7 +139,7 @@ export default function Home() {
 
       {/* ── AUDIENCE CARDS ── */}
       <section style={{
-        background: `linear-gradient(to bottom, rgba(20,8,0,0.92), rgba(30,12,0,0.96)), url('/hero-bg.jpg') center/cover fixed`,
+        background: `linear-gradient(to bottom, rgba(20,8,0,0.88), rgba(30,12,0,0.92)), url('/hero-bg.jpg') center 60% / cover fixed`,
         padding: '64px 40px',
       }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
@@ -194,7 +194,7 @@ export default function Home() {
       <section
         id="form-section"
         style={{
-          background: `linear-gradient(to bottom, rgba(30,12,0,0.96), rgba(20,6,0,0.98)), url('/hero-bg.jpg') center/cover fixed`,
+          background: `linear-gradient(to bottom, rgba(25,10,0,0.93), rgba(18,6,0,0.97)), url('/hero-bg.jpg') center 70% / cover fixed`,
           padding: '64px 40px 80px',
         }}
       >
