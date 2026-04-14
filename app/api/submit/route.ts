@@ -78,9 +78,21 @@ async function notifyTelegram(name: string, mobile: string, email: string, pai: 
   }).catch(e => console.error('[TG] error:', e))
 }
 
+async function resolveCampaignId(slug: string, supabaseKey: string): Promise<string | null> {
+  if (!slug) return null
+  try {
+    const res = await fetch(
+      `${SKYS_SUPABASE_URL}/rest/v1/recruitment_campaigns?slug=eq.${encodeURIComponent(slug)}&select=id&limit=1`,
+      { headers: { 'apikey': supabaseKey, 'Authorization': `Bearer ${supabaseKey}` } }
+    )
+    const data = await res.json()
+    return data?.[0]?.id || null
+  } catch { return null }
+}
+
 export async function POST(req: NextRequest) {
   try {
-    const { name, mobile, email, currentRole, pai, mdrt } = await req.json()
+    const { name, mobile, email, currentRole, pai, mdrt, campaignSlug } = await req.json()
 
     if (!name || !mobile || !email || !pai) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
@@ -91,6 +103,7 @@ export async function POST(req: NextRequest) {
 
     // 1. Save to Supabase
     if (supabaseKey) {
+      const campaignId = await resolveCampaignId(campaignSlug || '', supabaseKey)
       await fetch(`${SKYS_SUPABASE_URL}/rest/v1/recruitment_leads`, {
         method: 'POST',
         headers: {
@@ -109,6 +122,7 @@ export async function POST(req: NextRequest) {
           source: 'rc25-map8',
           source_id: RECRUITMENT_SOURCE_ID,
           status: 'new',
+          campaign_id: campaignId,
         }),
       }).catch(e => console.error('[DB] error:', e))
     }

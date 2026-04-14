@@ -11,9 +11,17 @@ export default function Home() {
     name: '', mobile: '', email: '', income: '',
     mdrt: '', currentRole: '', consent: false,
   })
+  const [campaignSlug, setCampaignSlug] = useState('')
   const [loading, setLoading] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState('')
+
+  // Capture campaign ID from URL on mount
+  React.useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const cid = params.get('cid') || ''
+    if (cid) setCampaignSlug(cid)
+  }, [])
 
   const scrollToForm = () =>
     document.getElementById('form-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -31,7 +39,7 @@ export default function Home() {
       await fetch('/api/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, pai: form.income }),
+        body: JSON.stringify({ ...form, pai: form.income, campaignSlug }),
       })
       setSubmitted(true)
     } catch { setError('Network error. Please try again.') }
