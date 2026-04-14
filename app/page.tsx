@@ -78,12 +78,12 @@ export default function Home() {
   ]
 
   return (
-    <div style={{ fontFamily: "'Montserrat', 'Inter', -apple-system, sans-serif", minHeight: '100vh', background: '#100500', color: '#fff', overflowX: 'hidden' }}>
+    <div style={{ fontFamily: "'Montserrat', 'Inter', -apple-system, sans-serif", minHeight: '100vh', background: '#0A0D14', color: '#fff', overflowX: 'hidden' }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
         * { box-sizing: border-box; margin: 0; padding: 0; }
         input::placeholder { color: rgba(255,255,255,0.35); }
-        select option { background: #1a0f05; color: #fff; }
+        select option { background: #0d1117; color: #fff; }
         input:focus, select:focus { border-color: ${GOLD} !important; outline: none; }
         @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
         @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.75)} }
@@ -104,8 +104,8 @@ export default function Home() {
           transition: all 0.3s ease; font-family: inherit; letter-spacing: 0.3px;
         }
         .btn-pill-filled:hover { background: rgba(212,175,55,0.22); box-shadow: 0 0 28px rgba(212,175,55,0.35); }
-        .pillar-card { flex: 1; border: 1px solid rgba(212,175,55,0.2); border-radius: 16px; padding: 28px 24px; background: rgba(0,0,0,0.3); backdrop-filter: blur(8px); transition: border-color 0.3s; }
-        .pillar-card:hover { border-color: rgba(212,175,55,0.5); }
+        .pillar-card { flex: 1; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 32px 28px; background: rgba(255,255,255,0.03); transition: border-color 0.3s, background 0.3s; }
+        .pillar-card:hover { border-color: rgba(212,175,55,0.4); background: rgba(212,175,55,0.04); }
         .audience-card { background: #fff; border-radius: 14px; overflow: hidden; flex: 1; cursor: pointer; transition: transform 0.22s ease, box-shadow 0.22s ease; min-width: 0; }
         .audience-card:hover { transform: translateY(-5px); box-shadow: 0 16px 48px rgba(0,0,0,0.55); }
         .card-img { width: 100%; height: 220px; object-fit: cover; object-position: center top; display: block; }
@@ -122,15 +122,15 @@ export default function Home() {
       {/* ── HERO ── */}
       <section className="sec-pad" style={{
         minHeight: '100vh',
-        background: `linear-gradient(to bottom, rgba(10,5,0,0.22) 0%, rgba(10,5,0,0.18) 30%, rgba(15,7,0,0.58) 65%, rgba(18,6,0,0.96) 100%), ${BG} center top / cover no-repeat`,
+        background: `linear-gradient(to bottom, rgba(5,8,18,0.35) 0%, rgba(5,8,18,0.25) 30%, rgba(5,8,18,0.72) 65%, rgba(8,10,20,0.97) 100%), ${BG} center top / cover no-repeat`,
         display: 'flex', flexDirection: 'column', justifyContent: 'center',
         padding: '100px 0 64px',
       }}>
         <div className="fade-up" style={{ maxWidth: 680, padding: '0 36px 0 48px' }}>
           <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', marginBottom: 20, letterSpacing: 0.5, textTransform: 'uppercase', fontWeight: 600 }}>
-            Financial Advisory · Singapore
+            MAP 8 · Leadership Programme
           </p>
-          <h1 style={{ fontSize: 'clamp(40px, 6vw, 66px)', fontWeight: 900, lineHeight: 1.08, marginBottom: 18, letterSpacing: '-1px' }}>
+          <h1 style={{ fontSize: 'clamp(40px, 6vw, 66px)', fontWeight: 800, lineHeight: 1.1, marginBottom: 18, letterSpacing: '-0.5px' }}>
             Unlock Up to<br />
             <span style={{ color: GOLD_LIGHT }}>4X</span> Transition<br />
             Packages
@@ -152,36 +152,35 @@ export default function Home() {
 
       {/* ── 3 PILLARS ── */}
       <section className="sec-pad" style={{
-        background: `linear-gradient(to bottom, rgba(18,6,0,0.97), rgba(22,8,0,0.95)), ${BG} center 45% / cover fixed`,
+        background: '#0D1117',
         padding: '72px 48px',
       }}>
         <div style={{ maxWidth: 1000, margin: '0 auto' }}>
           <p style={{ fontSize: 11, fontWeight: 700, color: GOLD, letterSpacing: '0.14em', textTransform: 'uppercase', marginBottom: 12, textAlign: 'center' }}>What makes MAP 8 different</p>
-          <h2 style={{ fontSize: 'clamp(24px, 3vw, 36px)', fontWeight: 800, color: '#fff', textAlign: 'center', marginBottom: 48, letterSpacing: '-0.5px' }}>
+          <h2 style={{ fontSize: 'clamp(24px, 3vw, 36px)', fontWeight: 700, color: '#fff', textAlign: 'center', marginBottom: 48, letterSpacing: '-0.3px' }}>
             A framework designed for serious advisers.
           </h2>
           <div className="pillars-row" style={{ display: 'flex', gap: 20 }}>
             {[
               {
-                icon: '🎯', tag: 'Competitive',
+                tag: 'Competitive',
                 title: 'Targets designed to be achievable',
                 desc: 'MAP 8 sets realistic milestones based on your track record. Your goals are calibrated to what you have already proven you can do — not arbitrary benchmarks.',
               },
               {
-                icon: '⚙️', tag: 'Simplified',
+                tag: 'Simplified',
                 title: 'Admin and catch-up handled automatically',
                 desc: 'Excess production in any year covers shortfalls from prior years. No appeals. No lost years. The system works for you — not against you.',
               },
               {
-                icon: '📈', tag: 'Pay for Performance',
+                tag: 'Pay for Performance',
                 title: 'Your track record determines your reward',
                 desc: 'Whether or not you have production certificates, you qualify. Both paths offer the same framework — no disadvantage for advisers without MDRT certificates.',
               },
-            ].map(({ icon, tag, title, desc }) => (
+            ].map(({ tag, title, desc }) => (
               <div key={tag} className="pillar-card">
-                <span style={{ fontSize: 28, marginBottom: 16, display: 'block' }}>{icon}</span>
                 <span style={{ fontSize: 10, fontWeight: 700, color: GOLD, letterSpacing: '0.1em', textTransform: 'uppercase', display: 'block', marginBottom: 10 }}>{tag}</span>
-                <h3 style={{ fontSize: 17, fontWeight: 800, color: '#fff', marginBottom: 10, lineHeight: 1.35 }}>{title}</h3>
+                <h3 style={{ fontSize: 16, fontWeight: 700, color: '#fff', marginBottom: 10, lineHeight: 1.4 }}>{title}</h3>
                 <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)', lineHeight: 1.75 }}>{desc}</p>
               </div>
             ))}
@@ -191,7 +190,7 @@ export default function Home() {
 
       {/* ── YEAR 7 ── */}
       <section className="sec-pad" style={{
-        background: `linear-gradient(to bottom, rgba(22,8,0,0.95), rgba(20,7,0,0.96)), ${BG} center 55% / cover fixed`,
+        background: '#0A0D14',
         padding: '72px 48px',
       }}>
         <div style={{ maxWidth: 800, margin: '0 auto', textAlign: 'center' }}>
@@ -230,7 +229,7 @@ export default function Home() {
 
       {/* ── AUDIENCE CARDS ── */}
       <section className="sec-pad" style={{
-        background: `linear-gradient(to bottom, rgba(20,7,0,0.96), rgba(22,8,0,0.95)), ${BG} center 60% / cover fixed`,
+        background: '#0D1117',
         padding: '72px 48px',
       }}>
         <div style={{ maxWidth: 960, margin: '0 auto' }}>
@@ -261,7 +260,7 @@ export default function Home() {
 
       {/* ── HOW IT WORKS ── */}
       <section className="sec-pad" style={{
-        background: `linear-gradient(to bottom, rgba(22,8,0,0.95), rgba(20,7,0,0.97)), ${BG} center 70% / cover fixed`,
+        background: '#0A0D14',
         padding: '72px 48px',
       }}>
         <div style={{ maxWidth: 900, margin: '0 auto', textAlign: 'center' }}>
@@ -290,7 +289,7 @@ export default function Home() {
 
       {/* ── FORM ── */}
       <section id="form-section" className="sec-pad" style={{
-        background: `linear-gradient(to bottom, rgba(20,7,0,0.97), rgba(16,5,0,0.99)), ${BG} center 80% / cover fixed`,
+        background: '#0D1117',
         padding: '72px 48px 88px',
       }}>
         <div style={{ maxWidth: 680, margin: '0 auto' }}>
@@ -370,7 +369,7 @@ export default function Home() {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer style={{ background: '#080300', borderTop: '1px solid rgba(255,255,255,0.04)', padding: '28px 48px', textAlign: 'center' }}>
+      <footer style={{ background: '#070A10', borderTop: '1px solid rgba(255,255,255,0.06)', padding: '28px 48px', textAlign: 'center' }}>
         <p style={{ fontSize: 11, color: 'rgba(255,255,255,0.15)', maxWidth: 560, margin: '0 auto', lineHeight: 1.8 }}>
           All compensation structures are indicative, personalised, and subject to eligibility criteria. This page is intended for qualified financial advisory professionals in Singapore only.
         </p>
