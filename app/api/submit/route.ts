@@ -14,9 +14,7 @@ async function sendWhatsAppConfirmation(name: string, mobile: string) {
   const accountSid = process.env.TWILIO_ACCOUNT_SID
   const authToken = process.env.TWILIO_AUTH_TOKEN
   const fromNumber = process.env.TWILIO_WA_FROM // e.g. whatsapp:+6591086574
-  const bookingUrl = process.env.BOOKING_URL // Sam's Calendly/TidyCal link
-
-  if (!accountSid || !authToken || !fromNumber || !bookingUrl) {
+  if (!accountSid || !authToken || !fromNumber) {
     console.warn('[WA] Missing Twilio env vars — skipping WhatsApp send')
     return
   }
@@ -31,7 +29,7 @@ async function sendWhatsAppConfirmation(name: string, mobile: string) {
     From: fromNumber,
     To: to,
     ContentSid: process.env.TWILIO_CONTENT_SID || '',
-    ContentVariables: JSON.stringify({ '1': firstName, '2': bookingUrl }),
+    ContentVariables: JSON.stringify({ '1': firstName }),
   })
 
   const url = `https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`
