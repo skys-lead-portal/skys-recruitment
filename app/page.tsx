@@ -102,9 +102,9 @@ export default function Home() {
         className="hero-section"
         style={{
           minHeight: '100vh',
-          background: `linear-gradient(to bottom, rgba(15,8,0,0.3) 0%, rgba(15,8,0,0.5) 60%, rgba(20,8,0,0.92) 100%), url('/hero-bg.jpg') center/cover no-repeat`,
-          display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',
-          padding: '0 0 60px',
+          background: `linear-gradient(to bottom, rgba(10,5,0,0.45) 0%, rgba(10,5,0,0.35) 40%, rgba(15,8,0,0.6) 70%, rgba(20,8,0,0.92) 100%), url('/hero-bg.jpg') center top/cover no-repeat`,
+          display: 'flex', flexDirection: 'column', justifyContent: 'center',
+          padding: '100px 0 60px',
           position: 'relative',
         }}
       >
