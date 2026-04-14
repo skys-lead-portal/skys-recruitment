@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import React, { useState } from 'react'
 
 const GOLD = '#D4AF37'
 const GOLD_LIGHT = '#E5C07B'
