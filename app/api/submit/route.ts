@@ -103,7 +103,7 @@ export async function POST(req: NextRequest) {
           full_name: name.trim(),
           mobile: normalizedPhone,
           email: email.trim(),
-          current_role: currentRole?.trim() || null,
+          role_company: currentRole?.trim() || null,
           pai_tier: pai,
           mdrt: mdrt || 'no',
           source: 'rc25-map8',

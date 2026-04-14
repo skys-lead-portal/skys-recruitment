@@ -38,6 +38,18 @@ export async function POST(req: NextRequest) {
       body: message.toString(),
     })
 
+    // Update wa_status in Supabase
+    const supabaseUrl = 'https://qcboyqrumtzmqffukrhb.supabase.co'
+    const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY
+    const mobile = from.replace('whatsapp:', '')
+    if (supabaseKey && mobile) {
+      await fetch(`${supabaseUrl}/rest/v1/recruitment_leads?mobile=eq.${encodeURIComponent(mobile)}&source=eq.rc25-map8`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json', 'apikey': supabaseKey, 'Authorization': `Bearer ${supabaseKey}` },
+        body: JSON.stringify({ wa_status: 'slot_confirmed', status: 'slot_confirmed' }),
+      }).catch(() => {})
+    }
+
     return NextResponse.json({ ok: true })
   } catch (e) {
     console.error('[WA Webhook] error:', e)
