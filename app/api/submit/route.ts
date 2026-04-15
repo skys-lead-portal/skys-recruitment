@@ -26,7 +26,7 @@ async function sendWhatsAppConfirmation(name: string, mobile: string) {
   const body = new URLSearchParams({
     From: fromNumber,
     To: to,
-    ContentSid: process.env.TWILIO_CONTENT_SID || '',
+    ContentSid: 'HXe0edfbbcddd857cb8fe1fb4fe5b05d51',
     ContentVariables: JSON.stringify({ '1': firstName }),
   })
 
@@ -67,7 +67,7 @@ async function notifyTelegram(name: string, mobile: string, email: string, pai: 
     above_400k: 'Above S$400k',
   }
 
-  const text = `🎯 *New MAP 8 Recruitment Lead*\n\n👤 ${name}\n📱 ${mobile}\n📧 ${email}${role ? `\n💼 ${role}` : ''}\n💰 ${paiLabel[pai] || pai}\n🏆 MDRT: ${mdrt === 'yes' ? 'Yes ✅' : 'No'}\n\n📍 via SKYS Recruitment Page`
+  const text = `🎯 *New Recruitment Lead*\n\n👤 ${name}\n📱 ${mobile}\n📧 ${email}${role ? `\n💼 ${role}` : ''}\n💰 ${paiLabel[pai] || pai}\n🏆 MDRT: ${mdrt === 'yes' ? 'Yes ✅' : 'No'}\n\n📍 via SKYS Recruitment Page`
 
   await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
     method: 'POST',
