@@ -127,8 +127,8 @@ export async function POST(req: NextRequest) {
     // 2. Notify Telegram ops group
     await notifyTelegram(name.trim(), normalizedPhone, email.trim(), pai, currentRole || '', mdrt || 'no')
 
-    // 3. Send WhatsApp confirmation to lead (fire-and-forget)
-    sendWhatsAppConfirmation(name.trim(), normalizedPhone).catch(e => console.error('[WA] error:', e))
+    // 3. Send WhatsApp confirmation to lead (awaited so it completes before function exits)
+    await sendWhatsAppConfirmation(name.trim(), normalizedPhone).catch(e => console.error('[WA] error:', e))
 
     return NextResponse.json({ success: true })
   } catch (e) {
