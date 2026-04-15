@@ -144,9 +144,9 @@ export default function Home() {
       {/* ── HERO ── */}
       <section style={{
         minHeight: '100vh',
-        background: `linear-gradient(to bottom, rgba(10,6,2,0.3) 0%, rgba(10,6,2,0.2) 30%, rgba(10,6,2,0.65) 65%, rgba(18,9,3,0.97) 100%), ${BG} center top / cover no-repeat`,
-        display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',
-        padding: '0 0 80px',
+        background: `linear-gradient(to bottom, rgba(10,6,2,0.45) 0%, rgba(10,6,2,0.25) 35%, rgba(10,6,2,0.65) 70%, rgba(18,9,3,0.98) 100%), ${BG} center top / cover no-repeat`,
+        display: 'flex', flexDirection: 'column', justifyContent: 'flex-start',
+        padding: '60px 0 80px',
         position: 'relative',
       }}>
         <div className="fade-up hero-text" style={{ maxWidth: 560, padding: '0 48px' }}>
