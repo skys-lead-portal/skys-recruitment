@@ -143,10 +143,11 @@ export default function Home() {
 
       {/* ── HERO ── */}
       <section style={{
-        minHeight: '100vh',
         background: `linear-gradient(to bottom, rgba(10,6,2,0.45) 0%, rgba(10,6,2,0.25) 35%, rgba(10,6,2,0.65) 70%, rgba(18,9,3,0.98) 100%), ${BG} center top / cover no-repeat`,
         display: 'flex', flexDirection: 'column', justifyContent: 'flex-start',
-        padding: '60px 0 80px',
+        padding: '60px 0 64px',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center top',
         position: 'relative',
       }}>
         <div className="fade-up hero-text" style={{ maxWidth: 560, padding: '0 48px' }}>
