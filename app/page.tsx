@@ -146,10 +146,18 @@ export default function Home() {
         /* ── DIVIDER ── */
         .gold-rule { width: 48px; height: 2px; background: ${GOLD}; margin: 0 auto 28px; }
 
-        @media (max-width: 768px) {
-          .cards-row  { flex-direction: column !important; }
-          .hero-inner { padding: 0 24px !important; }
-          .sec-inner  { padding: 0 24px !important; }
+        /* ── MOBILE ── */
+        @media (max-width: 640px) {
+          .cards-row       { flex-direction: column !important; gap: 16px !important; }
+          .hero-inner      { padding: 48px 24px 72px !important; }
+          .sec-inner       { padding: 0 20px !important; }
+          .sec-pad-mobile  { padding: 56px 20px !important; }
+          .form-pad-mobile { padding: 56px 20px 72px !important; }
+          .form-box-mobile { padding: 28px 20px 24px !important; }
+          .footer-mobile   { padding: 28px 20px !important; }
+          .btn-hero        { padding: 15px 28px !important; font-size: 13px !important; width: 100%; justify-content: center; }
+          .btn-section     { padding: 14px 28px !important; font-size: 13px !important; width: 100%; justify-content: center; }
+          .card-img        { height: 180px !important; }
         }
       `}</style>
 
@@ -160,7 +168,7 @@ export default function Home() {
         position: 'relative',
         backgroundImage: `url('/hero-bg.jpg')`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center 20%',
+        backgroundPosition: '65% 20%',
         backgroundRepeat: 'no-repeat',
       }}>
         {/* Dark overlay — heavy at top, heavier at bottom so it bleeds into next section */}
@@ -187,8 +195,8 @@ export default function Home() {
           <button className="btn-hero" onClick={scrollToForm}>
             Check If You Qualify &nbsp;›
           </button>
-          <p style={{ fontSize: 11, color: 'rgba(255,255,255,0.28)', marginTop: 18, letterSpacing: '0.03em', fontFamily: 'Inter, sans-serif' }}>
-            Limited openings &nbsp;·&nbsp; No obligation &nbsp;·&nbsp; Private &amp; Confidential
+          <p style={{ fontSize: 11, color: 'rgba(255,255,255,0.28)', marginTop: 18, letterSpacing: '0.03em', fontFamily: 'Inter, sans-serif', lineHeight: 1.8 }}>
+            Limited openings · No obligation · Private &amp; Confidential
           </p>
         </div>
       </section>
@@ -196,7 +204,7 @@ export default function Home() {
       {/* ────────────────────────────────────────
           AUDIENCE CARDS
       ──────────────────────────────────────── */}
-      <section style={{ background: '#0E0A06', padding: '80px 56px' }}>
+      <section className="sec-pad-mobile" style={{ background: '#0E0A06', padding: '80px 56px' }}>
         <div className="sec-inner" style={{ maxWidth: 960, margin: '0 auto' }}>
           <p style={{ textAlign: 'center', fontSize: 11, fontWeight: 600, color: GOLD, letterSpacing: '0.16em', textTransform: 'uppercase', marginBottom: 14 }}>
             Who We&apos;re Looking For
@@ -232,7 +240,7 @@ export default function Home() {
       {/* ────────────────────────────────────────
           FORM
       ──────────────────────────────────────── */}
-      <section id="form-section" style={{ background: '#0A0704', padding: '80px 56px 100px', borderTop: '1px solid rgba(200,151,90,0.12)' }}>
+      <section id="form-section" className="form-pad-mobile" style={{ background: '#0A0704', padding: '80px 56px 100px', borderTop: '1px solid rgba(200,151,90,0.12)' }}>
         <div className="sec-inner" style={{ maxWidth: 580, margin: '0 auto' }}>
           <p style={{ textAlign: 'center', fontSize: 11, fontWeight: 600, color: GOLD, letterSpacing: '0.16em', textTransform: 'uppercase', marginBottom: 14 }}>
             Eligibility Check
@@ -245,7 +253,7 @@ export default function Home() {
             Submit your details. Our director prepares a personalised proposal within 24 hours.
           </p>
 
-          <div style={{ border: '1px solid rgba(200,151,90,0.2)', borderRadius: 8, padding: '40px 40px 36px', background: 'rgba(255,255,255,0.025)' }}>
+          <div className="form-box-mobile" style={{ border: '1px solid rgba(200,151,90,0.2)', borderRadius: 8, padding: '40px 40px 36px', background: 'rgba(255,255,255,0.025)' }}>
             {submitted ? (
               <div style={{ textAlign: 'center', padding: '40px 0' }}>
                 <div style={{ width: 64, height: 64, borderRadius: '50%', background: 'rgba(22,163,74,0.12)', border: '1px solid rgba(22,163,74,0.35)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 22px' }}>
@@ -334,7 +342,7 @@ export default function Home() {
       {/* ────────────────────────────────────────
           FOOTER
       ──────────────────────────────────────── */}
-      <footer style={{ background: '#070503', borderTop: '1px solid rgba(255,255,255,0.04)', padding: '32px 56px' }}>
+      <footer className="footer-mobile" style={{ background: '#070503', borderTop: '1px solid rgba(255,255,255,0.04)', padding: '32px 56px' }}>
         <div style={{ maxWidth: 680, margin: '0 auto', textAlign: 'center' }}>
           <p style={{ fontSize: 11, fontWeight: 600, color: GOLD, letterSpacing: '0.14em', textTransform: 'uppercase', marginBottom: 10 }}>
             SKYS Branch · Manulife Financial Advisers Singapore
