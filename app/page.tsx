@@ -155,7 +155,10 @@ export default function Home() {
         /* ── MOBILE ── */
         @media (max-width: 640px) {
           .cards-row       { flex-direction: column !important; gap: 16px !important; }
-          .hero-inner      { padding: 48px 24px 72px !important; }
+          .hero-inner      { padding: 48px 24px 220px !important; }
+          .hero-img        { width: 100% !important; height: 280px !important; top: auto !important; bottom: 0 !important; right: 0 !important; }
+          .hero-fade-right { display: none !important; }
+          .hero-fade-bottom { height: 80px !important; }
           .sec-inner       { padding: 0 20px !important; }
           .sec-pad-mobile  { padding: 56px 20px !important; }
           .form-pad-mobile { padding: 56px 20px 72px !important; }
@@ -172,22 +175,45 @@ export default function Home() {
       ──────────────────────────────────────── */}
       <section style={{
         position: 'relative',
-        backgroundImage: `url('/hero-bg.jpg')`,
-        backgroundSize: 'cover',
-        backgroundPosition: '65% 20%',
-        backgroundRepeat: 'no-repeat',
+        background: CREAM,
+        overflow: 'hidden',
+        minHeight: '600px',
       }}>
-        {/* Dark overlay — heavy at top, heavier at bottom so it bleeds into next section */}
-        <div style={{
+        {/* Hero image — pinned to right column, fixed crop */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/hero-bg.jpg"
+          alt="SKYS team"
+          className="hero-img"
+          style={{
+            position: 'absolute',
+            top: 0, right: 0,
+            height: '100%',
+            width: '760px',
+            objectFit: 'cover',
+            objectPosition: 'center 45%',
+            transform: 'scale(1.4) translateY(8%)',
+            transformOrigin: 'center center',
+          }}
+        />
+        {/* Gradient fade: cream bleeds over the left edge of the photo */}
+        <div className="hero-fade-right" style={{
           position: 'absolute', inset: 0,
-          background: 'linear-gradient(to bottom, rgba(247,243,238,0.72) 0%, rgba(247,243,238,0.45) 35%, rgba(247,243,238,0.65) 70%, rgba(247,243,238,1) 100%)',
+          background: `linear-gradient(to right, ${CREAM} 420px, rgba(247,243,238,0.75) 520px, rgba(247,243,238,0) 680px)`,
+          zIndex: 1,
+        }} />
+        {/* Bottom fade into cream */}
+        <div className="hero-fade-bottom" style={{
+          position: 'absolute', bottom: 0, left: 0, right: 0, height: 120,
+          background: `linear-gradient(to bottom, transparent, ${CREAM})`,
+          zIndex: 1,
         }} />
 
-        <div className="fade-up hero-inner" style={{ position: 'relative', zIndex: 1, maxWidth: 620, padding: '72px 56px 96px' }}>
+        <div className="fade-up hero-inner" style={{ position: 'relative', zIndex: 2, padding: '140px 56px 96px' }}>
           <p style={{ fontSize: 11, fontWeight: 600, color: GOLD, letterSpacing: '0.18em', textTransform: 'uppercase', marginBottom: 22 }}>
             SKYS Branch · Manulife Financial Advisers Singapore
           </p>
-          <h1 style={{ fontSize: 'clamp(42px, 6.5vw, 68px)', fontWeight: 800, lineHeight: 1.06, marginBottom: 22, letterSpacing: '-0.5px', color: TEXT_DARK }}>
+          <h1 style={{ fontSize: 'clamp(42px, 6.5vw, 68px)', fontWeight: 800, lineHeight: 1.06, marginBottom: 22, letterSpacing: '-0.5px', color: TEXT_DARK, textShadow: 'none' }}>
             Unlock Up to<br />
             <span style={{ color: GOLD_LIGHT }}>4×</span> Transition<br />
             Packages
@@ -297,7 +323,7 @@ export default function Home() {
                   <label style={{ display: 'block', fontSize: 12, color: TEXT_MID, marginBottom: 8, fontWeight: 500, letterSpacing: '0.06em', textTransform: 'uppercase' }}>Average Annual Income (Past 3 Years)</label>
                   <select
                     value={form.income} onChange={e => setForm(f => ({ ...f, income: e.target.value }))}
-                    style={{ ...inputStyle, cursor: 'pointer', color: form.income ? '#fff' : 'rgba(255,255,255,0.3)', appearance: 'none', backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,0.35)' fill='none' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 18px center' }}
+                    style={{ ...inputStyle, cursor: 'pointer', color: form.income ? '#fff' : 'rgba(255,255,255,0.3)', appearance: 'none', backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(26,18,8,0.4)' fill='none' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 18px center' }}
                     required
                   >
                     <option value="">Select income range</option>

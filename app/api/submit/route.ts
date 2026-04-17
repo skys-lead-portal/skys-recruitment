@@ -118,6 +118,7 @@ export async function POST(req: NextRequest) {
           pai_tier: pai,
           mdrt: mdrt || 'no',
           source: 'rc25-map8',
+          lead_type: 'campaign',
           status: 'new',
           campaign_id: campaignId,
         }),
