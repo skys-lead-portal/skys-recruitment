@@ -307,7 +307,7 @@ export default function Home() {
                 <div style={{ marginBottom: 16 }}>
                   <label style={{ display: 'block', fontSize: 12, color: TEXT_MID, marginBottom: 8, fontWeight: 500, letterSpacing: '0.06em', textTransform: 'uppercase' }}>Mobile Number</label>
                   <div style={{ display: 'flex' }}>
-                    <div style={{ ...inputStyle, width: 76, borderRadius: '6px 0 0 6px', borderRight: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: 14, color: 'rgba(255,255,255,0.55)', letterSpacing: '0.02em' }}>
+                    <div style={{ ...inputStyle, width: 76, borderRadius: '6px 0 0 6px', borderRight: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: 14, color: '#1A1208', fontWeight: 600, letterSpacing: '0.02em', background: '#F5F3EF' }}>
                       +65
                     </div>
                     <input type="tel" placeholder="8-digit number" maxLength={8} value={form.mobile} onChange={e => setForm(f => ({ ...f, mobile: e.target.value.replace(/\D/g, '') }))} style={{ ...inputStyle, borderRadius: '0 6px 6px 0' }} required />
