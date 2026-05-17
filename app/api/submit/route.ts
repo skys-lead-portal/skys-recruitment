@@ -20,13 +20,12 @@ async function sendWhatsAppConfirmation(name: string, mobile: string) {
   const to = `whatsapp:${mobile}`
   const firstName = name.trim().split(' ')[0]
 
-  // Use Twilio Content API template with CTA button
-  // Template: skys_recruitment_confirmation_v1
-  // Variables: {{1}} = first name, {{2}} = booking URL
+  // Template: skys_recruitment_enquiry_confirm_v1 (quick-reply with Confirm My Slot button)
+  // Variables: {{1}} = first name
   const body = new URLSearchParams({
     From: fromNumber,
     To: to,
-    ContentSid: 'HXe0edfbbcddd857cb8fe1fb4fe5b05d51',
+    ContentSid: 'HX054483733fe72b4427f39121d970093f',
     ContentVariables: JSON.stringify({ '1': firstName }),
   })
 
